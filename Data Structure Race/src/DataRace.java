@@ -20,7 +20,7 @@ public class DataRace extends JPanel implements ActionListener, MouseListener {
 	private static final int barWidth = 8;
 	private static final int bars = windowWidth/barWidth;
 	private static int[] array;
-	
+
 	public DataRace(){
 		//Create an array that stores the size of a bar
 		array = new int[bars]; 
@@ -65,8 +65,9 @@ public class DataRace extends JPanel implements ActionListener, MouseListener {
 			int xInitial = i+(barWidth-1)*i;
 			int yInitial = windowHeight - height;
 		
-			graphics.fillRect(xInitial, yInitial, barWidth, height);
+			graphics.fillRect(xInitial, yInitial, barWidth, height);		
 		}
+		repaint();
 		
 	}
 
@@ -110,17 +111,17 @@ public class DataRace extends JPanel implements ActionListener, MouseListener {
 		
 	}
 	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DataRace sort = new DataRace();
-		//mergeSort.sort(array,array.length);
+		mergeSort.sort(array,array.length);
 		//bubbleSort.sort(array);
 		//selectionSort.sort(array);
 		//insertionSort.sort(array);
 		//quickSort.sort(array,0,array.length-1);
 	}
-
-
 
 
 
