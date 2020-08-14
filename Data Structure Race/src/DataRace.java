@@ -54,13 +54,14 @@ public class DataRace extends JPanel implements ActionListener, MouseListener {
 	}
 	
 	
-	public void paintComponent(Graphics g) {
+	public  void paintComponent(Graphics g) {
 		Graphics2D graphics = (Graphics2D) g;
 		super.paintComponent(graphics);
 		
 		graphics.setColor(Color.BLACK);
 
 		for(int i=0;i<bars;i++) {
+			//Add random variable to multiply by
 			int height = array[i] *3;
 			int xInitial = i+(barWidth-1)*i;
 			int yInitial = windowHeight - height;
@@ -70,7 +71,7 @@ public class DataRace extends JPanel implements ActionListener, MouseListener {
 		repaint();
 		
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -116,7 +117,7 @@ public class DataRace extends JPanel implements ActionListener, MouseListener {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DataRace sort = new DataRace();
-		mergeSort.sort(array,array.length);
+		shellSort.sort(array);
 		//bubbleSort.sort(array);
 		//selectionSort.sort(array);
 		//insertionSort.sort(array);
